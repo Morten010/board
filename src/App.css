@@ -1,38 +1,83 @@
 .App {
-  text-align: center;
+  height: 100vh;
+  max-height: 100vh;
+  background-color: #3E3D41;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  padding: 2rem;
+  gap: 5.7rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#infoBoard{
+  grid-column: span 2;
+  grid-row: span 2;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#infoBoard .top{
+  display: flex ;
+  justify-content: space-between;
+  align-items: center;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#infoBoard .top .left{
+  display: flex;
+  font-size: 6.5rem;
+}
+#infoBoard .top .left .time{
+  margin-right: 4rem ;
+  padding-right: 4rem;
+  border-right: 1px solid #DDD2B9;
+}
+#infoBoard .top img{
+  height: 6.5rem;
+}
+#infoBoard .content{
+  display: flex;
+  height: calc(100% - 76px - 60px);
+} 
+#infoBoard .content article{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 2rem;
+}
+#infoBoard .content article address{
+  font-size: 2.6rem;
+  font-style: normal;
+}
+#infoBoard .content article:first-child{
+  border-right: 1px solid #3E3D41;
+  padding-right: 3rem;
+  margin-right: 3rem;
+  width: 75%;
+}
+#infoBoard .content article:last-child{
+  width: 30%;
+}
+#skema{
+  grid-row: 1 / 5;
+  grid-column: 3 / 4;
+}
+#praktiskInfo{
+  grid-column: span 2;
 }
 
-.App-link {
-  color: #61dafb;
+.content{
+  padding: 3rem;
 }
+.top{
+  padding: 3rem;
+  background-color: #CE433D;
+  color: #DDD2B9;
+}
+h3{
+  font-size: 3.6rem;
+  font-weight: 600;
+}
+h2{
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+p{
+  font-size: 3.6rem;
+}
+section{
+  background-color: #DDD2B9;
 }
