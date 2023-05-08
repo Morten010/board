@@ -8,7 +8,25 @@ function Skema() {
 
   let sorted = null
   if(data){
-    sorted = data.value.sort(( a, b ) => {
+    sorted = data.value.filter(item => {
+      const time = new Date().toLocaleString("da-DK", {
+        hour: 'numeric',
+        minute: 'numeric',
+        hour12: false,
+      }).replaceAll(".", "")
+      const compare = new Date(item.StartDate).toLocaleString("da-DK", {
+        hour: 'numeric',
+        minute: 'numeric',
+        hour12: false,
+      }).replaceAll(".", "")
+      
+      if(time <= compare){
+        return item
+      } 
+
+    })
+  console.log(sorted);
+    sorted = sorted.sort(( a, b ) => {
       if(a.StartDate < b.StartDate){
         return -1;
       } else if(a.StartDate > b.StartDate){
@@ -17,8 +35,9 @@ function Skema() {
         return 0
       }
     })
-  }
   console.log(sorted);
+  }
+  // console.log(sorted);
 
   const formatTime = (time) => {
     let now = new Date(time).toLocaleString("da-DK", {

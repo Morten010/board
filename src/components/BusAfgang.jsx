@@ -40,6 +40,7 @@ function BusAfgang() {
           <img src="/icons/bus.svg" alt="Bus icon"  className='icon'/>
         </div>
         <div className="content">
+          {!error && <span className="error">{error}</span>}
           {data && data.MultiDepartureBoard.Departure.slice(0, 3).map(trip => (
             <div className="trip" key={Math.random() * 1000}>
               <div className="left">
