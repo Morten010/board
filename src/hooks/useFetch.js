@@ -29,6 +29,26 @@ const  useFetch = (url) => {
         }
        }
 
+    let timer;
+
+    // Interval is set to every sec
+    timer = setInterval(() => {
+        
+        //reseting/setting time to track seconds
+        const sec = new Date().getSeconds();
+
+        //if sec dosen't equal 0 return it
+        if(sec) {
+            return
+        }
+
+        //when sec is 0 fetch
+        fetchData()
+
+        return clearInterval(timer)
+    }, 1000);
+
+        //fetch data for first time
        fetchData()
     }, [url])
 

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="126.301" height="96" viewBox="0 0 126.301 96">
+  <defs>
+    <filter id="Path_17" x="0" y="10" width="116.301" height="86" filterUnits="userSpaceOnUse">
+      <feOffset dy="5" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Path_15" x="10" y="0" width="116.301" height="86" filterUnits="userSpaceOnUse">
+      <feOffset dy="5" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="wifi-alt" transform="translate(16 -2.076)">
+    <g transform="matrix(1, 0, 0, 1, -16, 2.08)" filter="url(#Path_17)">
+      <path id="Path_17-2" data-name="Path 17" d="M0,24.815A72.346,72.346,0,0,1,33.247,5.578a73.505,73.505,0,0,1,38.029,0A70.911,70.911,0,0,1,104.3,24.815l-9.34,9.563Q77.169,16.586,52.15,16.586A57.632,57.632,0,0,0,9.563,34.377ZM38.029,62.843a18.856,18.856,0,0,1,14.122-6,19.577,19.577,0,0,1,14.344,6L52.261,77.076ZM18.9,43.718A45.687,45.687,0,0,1,52.15,30.152,45.687,45.687,0,0,1,85.4,43.718L75.835,53.28A32.261,32.261,0,0,0,52.15,43.5,32.261,32.261,0,0,0,28.466,53.28Z" transform="translate(6 7.92)" fill="#3e3d41"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -16, 2.08)" filter="url(#Path_15)">
+      <path id="Path_15-2" data-name="Path 15" d="M0,24.815A72.346,72.346,0,0,1,33.247,5.578a73.505,73.505,0,0,1,38.029,0A70.911,70.911,0,0,1,104.3,24.815l-9.34,9.563Q77.169,16.586,52.15,16.586A57.632,57.632,0,0,0,9.563,34.377ZM38.029,62.843a18.856,18.856,0,0,1,14.122-6,19.577,19.577,0,0,1,14.344,6L52.261,77.076ZM18.9,43.718A45.687,45.687,0,0,1,52.15,30.152,45.687,45.687,0,0,1,85.4,43.718L75.835,53.28A32.261,32.261,0,0,0,52.15,43.5,32.261,32.261,0,0,0,28.466,53.28Z" transform="translate(16 -2.08)" fill="#ddd2b9"/>
+    </g>
+  </g>
+</svg>

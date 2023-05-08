@@ -8,8 +8,22 @@ export default function InfoBoard() {
     const { loading: LoadingWeather, data: dataWeather, error: weatherError} = useFetch("https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current_weather=true&hourly=temperature_2m,relativehumidity_2m,windspeed_10m")
 
     useEffect(() => {
-        setInterval(() => setDate(new Date()), 10000);
+        let timer;
+
+        timer = setInterval(() => {
+            
+            const sec = new Date().getSeconds()
+
+            if(sec) return;
+
+            setDate(new Date())
+
+        }, 1000);
+
+        return clearInterval(timer)
       }, []);
+
+      
     
   return (
     <section id='infoBoard'>
@@ -21,7 +35,7 @@ export default function InfoBoard() {
                          hour: 'numeric',
                          minute: 'numeric',
                          hour12: false,
-                    })}
+                    }).replaceAll(".", ":")}
                 </div> 
                 <div className="weather">
                     {dataWeather && dataWeather.current_weather.temperature}&deg;
