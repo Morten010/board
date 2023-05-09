@@ -4,6 +4,7 @@ import useFetch from '../hooks/useFetch'
 function Kantine() {
   const {loading, data, error} = useFetch("https://infoskaerm.techcollege.dk/umbraco/api/content/getcanteenmenu/?type=json")
   
+
   return (
     <section id='kantine'>
         <div className="top">
@@ -16,7 +17,7 @@ function Kantine() {
             </h3>
             
             <p>
-              {data && data.Days[0].Dish}
+              {data && data.Days[new Date().getDay() - 1].Dish}
             </p>
           </div>
     </section>
