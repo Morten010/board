@@ -25,7 +25,6 @@ function Skema() {
       } 
 
     })
-  console.log(sorted);
     sorted = sorted.sort(( a, b ) => {
       if(a.StartDate < b.StartDate){
         return -1;
@@ -35,7 +34,6 @@ function Skema() {
         return 0
       }
     })
-  console.log(sorted);
   }
   // console.log(sorted);
 
@@ -54,16 +52,15 @@ function Skema() {
     let timer;
 
     timer = setInterval(() => {
-        
-        const sec = new Date().getSeconds()
 
-        if(sec) return;
-
+      let sec = new Date().getSeconds()
+      if(sec = 0){
         setDate(new Date())
+      }
 
-    }, 1000);
+    }, 100000)
 
-    return clearInterval(timer)
+    return () => clearInterval(timer)
   }, []);
 
   const colorPicker = (color) => {

@@ -11,16 +11,13 @@ export default function InfoBoard() {
         let timer;
 
         timer = setInterval(() => {
-            
             const sec = new Date().getSeconds()
-
             if(sec) return;
 
             setDate(new Date())
-
         }, 1000);
 
-        return clearInterval(timer)
+        return () => clearInterval(timer)
       }, []);
 
       

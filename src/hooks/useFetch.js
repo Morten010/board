@@ -45,7 +45,7 @@ const  useFetch = (url) => {
         //when sec is 0 fetch
         fetchData()
 
-        return clearInterval(timer)
+        return () => clearInterval(timer)
     }, 1000);
 
         //fetch data for first time
