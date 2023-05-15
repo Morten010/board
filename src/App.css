@@ -150,3 +150,6 @@ section{
   border-left: 5px solid #424042;
   padding-left: 5rem;
 }
+#skema .content{
+  overflow: hidden;
+}

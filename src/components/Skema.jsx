@@ -116,7 +116,7 @@ function Skema() {
           <p>time</p>
           <p>Starter</p>
         </div>
-        {sorted && sorted.slice(0,8).map(item => item.dayShift ? <div className="class" key="imorgen"><h3>Imorgen</h3></div> : (
+        {sorted && sorted.slice(0,9).map(item => item.dayShift ? <div className="class" key="imorgen"><h3>Imorgen</h3></div> : (
           <div className='class' key={Math.random() * 3000}>
             <div className="buttons">
               <span className='classroom'>
