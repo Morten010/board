@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import useFetch from '../hooks/useFetch'
 import formatEdu from '../hooks/formatEdu'
 import formatColor from '../hooks/formatColor'
-
 function Skema() {
   const [date, setDate] = useState(new Date())
   const url = "https://iws.itcn.dk/techcollege/schedules?departmentcode=smed"

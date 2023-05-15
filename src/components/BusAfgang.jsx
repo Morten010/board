@@ -6,32 +6,37 @@ function BusAfgang() {
   const { loading, data, error} = useFetch("https://xmlopen.rejseplanen.dk/bin/rest.exe/multiDepartureBoard?id1=851400602&id2=851973402&rttime&format=json&useBus=1")
   
   //format time of how long there is to the bus comes
-  const formatTime = (time) => {
+  const formatTime = (trip) => {
 
-    let newTime = time
-    let now = new Date().toLocaleString("da-DK", {
-      hour: 'numeric',
-      minute: 'numeric',
-      hour12: false,
-    })
-    now = now.replaceAll(".", "")
-    newTime = newTime.replaceAll(":", "")
+    let date = trip.date
+    if(date) {
+      let time = trip.time
+      const year = new Date().getFullYear()
+      time += ":00"
+      date = date.split(".")
+      date = `${year}-${date[1]}-${date[0]}`
+      date = new Date(date + "T" + time)
 
-    //make time diffrence to minutes to compare them
-    now = Number(now.slice(0, 2)) * 60 + Number(now.slice(2, 4))
-    newTime = Number(newTime.slice(0, 2)) * 60 + Number(newTime.slice(2, 4))
-    const minDiff = newTime - now
+      let now = new Date()
 
-    //make time diffrence to min and hours to show and return
-    let hours = minDiff / 60
-    hours = Math.round(hours)
-    let min = minDiff % 60
-    if(!hours == 0){
-      const time = `${hours}T ${min}Min`
-      return time
-    }else{
-      const time = `${min} Min`
-      return time
+      now = now.getTime()
+      date = date.getTime()
+
+      console.log(date , now);
+      console.log(trip);
+      let diff = date - now;
+
+
+      let hours = new Date(diff).getHours() - 1
+      let min = new Date(diff).getMinutes() + 1
+      console.log(hours, min);
+      if(!hours == 0){
+        const time = `${hours}T ${min}Min`
+        return time
+      }else{
+        const time = `${min} Min`
+        return time
+      }
     }
     
   }
@@ -45,13 +50,13 @@ function BusAfgang() {
         <div className="content">
           
           {error && <span className="error">Kunne ik få fat i bustiderne</span>}
-            {data && data.MultiDepartureBoard.Departure.slice(0, 7).map(trip => (
+            {data && data.MultiDepartureBoard.Departure.slice(0, 6).map(trip => (
               <div className="trip" key={Math.random() * 1000}>
                 <div className="left">
                   <strong>{trip.line}</strong> {trip.direction}
                 </div>
                 <div className="right">
-                  {formatTime(trip.time)}
+                  {formatTime(trip)}
                   {console.log(formatTime(trip.time), trip.time)}
                 </div>
               </div>
