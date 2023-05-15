@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 
 
-const  useFetch = (url) => {
+const  useFetch = (url, time = 1000) => {
     const [loading, setLoading] = useState(null)
     const [data, setData] = useState(null)
     const [error, setError] = useState(null)
@@ -46,7 +46,7 @@ const  useFetch = (url) => {
         fetchData()
 
         return () => clearInterval(timer)
-    }, 1000);
+    }, time);
 
         //fetch data for first time
        fetchData()
@@ -54,5 +54,4 @@ const  useFetch = (url) => {
 
     return { loading, data, error}
 }
-
 export default useFetch

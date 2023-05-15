@@ -10,61 +10,16 @@
   gap: 5.7rem;
   font-family: "termina", sans-serif;
 }
-
-#infoBoard{
-  grid-column: span 2;
-  grid-row: span 2;
-}
-#infoBoard .top{
-  display: flex ;
-  justify-content: space-between;
-  align-items: center;
-}
-#infoBoard .top .left{
-  display: flex;
-  font-size: 6.5rem;
-}
-#infoBoard .top .left .time{
-  margin-right: 4rem ;
-  padding-right: 4rem;
-  border-right: 5px solid #424042;
-}
-#infoBoard .top img{
-  height: 6.5rem;
-}
-#infoBoard .content{
-  display: flex;
-  height: calc(100% - 76px - 60px);
-} 
-#infoBoard .content article{
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-#infoBoard .content article address{
-  font-size: 2.6rem;
-  font-style: normal;
-}
-#infoBoard .content article:first-child{
-  border-right: 1px solid #3E3D41;
-  padding-right: 3rem;
-  margin-right: 3rem;
-  width: 75%;
-}
-#infoBoard .content article:last-child{
-  width: 30%;
-}
 #skema{
   grid-row: 1 / 5;
-  grid-column: 3 / 4;
+  grid-column: 2 / 4;
   background-image: url(./assets/lines.svg);
 }
 #skema .content{
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   height: calc(100% - 164px);
-  gap: 3rem;
+  gap: 5rem;
 }
 #skema .class{
   display: flex;
@@ -112,16 +67,21 @@
 #praktiskInfo{
   grid-column: span 2;
 }
+#busAfgang{
+  grid-row: 2 / 5;
+}
 #busAfgang .content{
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   height: calc(100% - 154px); 
+  gap: 10rem;
 }
 #busAfgang .content .trip{
   display: flex;
   font-size: 3.6rem;
-  height: 33%;
   align-items: center;
+  height: 10rem;
 }
 #busAfgang .content .trip .left{
   width: 50%;
@@ -131,6 +91,16 @@
   display: flex;
   align-items: center;
   gap: 2rem;
+}
+#skema .header{
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  font-size: 3.6rem;
+  background-color: #DDD2B9;
+  padding: 2rem;
+  border: 5px solid #424042;
+  align-items: center;
 }
 #praktiskInfo .content{
   display: flex;
@@ -166,4 +136,17 @@ section{
 }
 .shadow{
   text-shadow: -0.8rem 0.7rem #3E3D41;
+}
+#skema .top div{
+  display: flex;
+  justify-content: space-between;
+  gap: 5rem;
+}
+#skema .time {
+  border-right: 5px solid #424042;
+  padding-right: 5rem;
+}
+#skema .weather{
+  border-left: 5px solid #424042;
+  padding-left: 5rem;
 }
