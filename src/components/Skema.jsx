@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import useFetch from '../hooks/useFetch'
-import formatEdu from '../hooks/formatEdu'
-import formatColor from '../hooks/formatColor'
+import formatColor from '../utils/formatColor'
 function Skema() {
   const [date, setDate] = useState(new Date())
   const url = "https://iws.itcn.dk/techcollege/schedules?departmentcode=smed"
@@ -20,8 +19,8 @@ function Skema() {
       if(time <= compare){
         return item
       } 
-
     })
+
     
     //add new date for showing new day is coming
     let newDay = new Date()
@@ -54,7 +53,7 @@ function Skema() {
         return item
       }
     })
-    if(sorted == 1) {
+    if(sorted === 1) {
       sorted = []
     }
   }
