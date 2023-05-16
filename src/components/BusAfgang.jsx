@@ -35,11 +35,11 @@ function BusAfgang() {
       let min = new Date(diff).getMinutes() + 1
 
       //if there is no hours show this template if there is hours show anothers
-      if(!hours === 0){
-        const time = `${hours}T ${min}Min`
+      if(hours === 0){
+        const time = `${min} Min`
         return time
       }else{
-        const time = `${min} Min`
+        const time = `${hours}T ${min}Min`
         return time
       }
     }
