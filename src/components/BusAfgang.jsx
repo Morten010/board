@@ -29,17 +29,30 @@ function BusAfgang() {
 
       //find diffrence between timeStamps
       let diff = date - now;
-
+      console.log(diff);
       //make time stamp into usable hours and minuts to shows
       let hours = new Date(diff).getHours() - 1
       let min = new Date(diff).getMinutes() + 1
 
       //if there is no hours show this template if there is hours show anothers
       if(hours === 0){
+        //if no hours show this template
         const time = `${min} Min`
         return time
-      }else{
+      }else if(hours > 0){
+        //if there is hours show this template
         const time = `${hours}T ${min}Min`
+        return time
+      } else if(diff > -60000){
+        //if its over 1 minut since it should have been show this
+        const newTime = new Date(Math.abs(diff)).getMinutes() - 1
+        const time = `0 Min`
+        return time
+      } else{
+        // if now show this template
+        const newTime = new Date(Math.abs(diff)).getMinutes() - 1
+        console.log(diff);
+        const time = `${newTime} Min`
         return time
       }
     }
