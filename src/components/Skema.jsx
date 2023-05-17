@@ -118,8 +118,7 @@ function Skema() {
           <div className='class' key={Math.random() * 3000}>
             <div className="buttons">
               <span className='classroom'>
-                {item.Room && item.Room}
-                {!item.Room && "..."}
+                {item.Team && item.Team}
               </span>
               <span className='team' style={{
                 backgroundColor: formatColor(item.Team)
