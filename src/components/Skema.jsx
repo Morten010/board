@@ -5,7 +5,7 @@ function Skema() {
   const [date, setDate] = useState(new Date())
   const url = "https://iws.itcn.dk/techcollege/schedules?departmentcode=smed"
   const {data} = useFetch(url)
-  const { data: dataWeather} = useFetch("https://api.open-meteo.com/v1/forecast?latitude=57.04&longitude=9.92&current_weather=true&hourly=temperature_2m,relativehumidity_2m,windspeed_10m", 1000 * 3600)
+  const { data: dataWeather} = useFetch("https://api.open-meteo.com/v1/forecast?latitude=57.05&longitude=9.92&current_weather=true&hourly=temperature_2m,relativehumidity_2m,windspeed_10m", 1000 * 3600)
 
   //initiate sorted
   let sorted = null
