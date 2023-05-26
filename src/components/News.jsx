@@ -13,7 +13,7 @@ export default function News() {
   }
   
   return (
-    <Marquee className='news'>
+    <Marquee className='news' speed={100}>
       {data && data.items.map(item => (
         <div className="news-item" key={item.title}>
           {item.title}
